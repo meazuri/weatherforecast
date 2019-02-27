@@ -35,7 +35,8 @@ class MainActivity : AppCompatActivity() {
         mBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-            replaceFragmentInActivity(WeatherForecastFragment(), R.id.contentFrame, false,null)
+        supportFragmentManager.inTransaction { add(R.id.contentFrame,WeatherForecastFragment()) }
+        //replaceFragmentInActivity(WeatherForecastFragment(), R.id.contentFrame, false,null)
 
     }
 
